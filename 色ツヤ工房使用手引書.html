@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>色ツヤ工房 使用手引書</title><style>
+:root{--bg:#fbfaf7;--fg:#22252a;--muted:#5d6570;--line:#dcd8cf;--panel:#f2efe8;--accent:#0b6b5d;--accent-fg:#fff;--done:#8a929c}
+@media (prefers-color-scheme:dark){:root{--bg:#16181b;--fg:#e8e6e1;--muted:#a3abb4;--line:#33373d;--panel:#202327;--accent:#5fc9b7;--accent-fg:#0d1512;--done:#78808a}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Yu Gothic UI","Hiragino Sans","Meiryo",system-ui,sans-serif;font-size:17px;line-height:1.85}
+.layout{display:flex;align-items:flex-start;max-width:1180px;margin:0 auto}
+nav.toc{position:sticky;top:0;align-self:flex-start;width:290px;flex:none;height:100vh;overflow-y:auto;padding:20px 16px 40px;border-right:1px solid var(--line);font-size:14.5px;line-height:1.5}
+nav.toc h2{font-size:15px;margin:0 0 4px;border:0;padding:0}
+nav.toc a{display:block;padding:5px 8px;border-radius:6px;color:var(--fg);text-decoration:none}
+nav.toc a:hover{background:var(--panel)}
+nav.toc a.on{background:var(--accent);color:var(--accent-fg)}
+nav.toc .grp{margin:14px 0 2px 8px;font-size:12.5px;color:var(--muted);letter-spacing:.04em}
+main{flex:1;min-width:0;padding:8px 28px 120px;max-width:820px}
+section.chapter{padding:34px 0 18px;border-bottom:1px solid var(--line);scroll-margin-top:0}
+h1{font-size:30px;line-height:1.35;margin:.2em 0 .5em}
+h2{font-size:22px;margin:1.9em 0 .4em;padding-left:12px;border-left:5px solid var(--accent);line-height:1.4}
+h3{font-size:18px;margin:1.5em 0 .3em}
+p{margin:.7em 0}
+a{color:var(--accent)}
+code{background:var(--panel);padding:.1em .4em;border-radius:5px;font-size:.92em;overflow-wrap:anywhere}p,li,td{overflow-wrap:anywhere}
+img{max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px;display:block;margin:12px 0;cursor:zoom-in;background:var(--panel)}
+ol,ul{padding-left:1.5em}
+li{margin:.5em 0}
+ol.steps{counter-reset:step;padding-left:0;list-style:none}
+ol.steps>li.step{position:relative;padding:10px 12px 10px 3em;border:1px solid var(--line);border-radius:10px;background:var(--panel);counter-increment:step}
+ol.steps>li.step::before{content:counter(step);position:absolute;left:10px;top:12px;width:1.7em;height:1.7em;border-radius:50%;background:var(--accent);color:var(--accent-fg);font-weight:700;text-align:center;line-height:1.7em;font-size:.95em}
+li.step.done{opacity:.6}
+li.step.done::before{content:"✓";background:var(--done)}
+li.step .tick{float:right;margin:0 0 4px 8px;font:inherit;font-size:12.5px;border:1px solid var(--line);background:var(--bg);color:var(--muted);border-radius:999px;padding:0 10px;line-height:1.8;cursor:pointer}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15px;line-height:1.6;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:var(--panel)}
+.top{position:fixed;right:16px;bottom:16px;display:flex;gap:8px;z-index:5}
+.top button,.top a{background:var(--accent);color:var(--accent-fg);border:0;border-radius:999px;padding:9px 16px;font:inherit;font-size:14px;text-decoration:none;cursor:pointer;box-shadow:0 2px 8px #0003}
+.menu-btn{display:none}
+#lightbox{position:fixed;inset:0;background:#000d;display:none;align-items:center;justify-content:center;z-index:20;cursor:zoom-out}
+#lightbox img{max-width:96vw;max-height:94vh;border:0;margin:0;cursor:zoom-out}
+#lightbox.on{display:flex}
+@media (max-width:860px){
+  nav.toc{position:fixed;left:0;top:0;z-index:10;background:var(--bg);transform:translateX(-100%);transition:transform .2s;width:min(86vw,320px);box-shadow:0 0 20px #0005}
+  nav.toc.open{transform:none}
+  .menu-btn{display:inline-block}
+  main{padding:8px 16px 120px}
+  body{font-size:16.5px}
+}
+@media print{nav.toc,.top{display:none}.layout{display:block}section.chapter{break-before:page}img{cursor:auto}li.step .tick{display:none}}
+.zukan-card{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:2px 16px 10px;margin:18px 0}
+.zukan-card>h2{margin-top:.7em}
+.zukan-card>h3{margin-top:.7em}
+.zukan-card img{background:var(--bg)}
+.zukan-card table{background:var(--bg)}
+.zukan-hero{border:2px solid var(--accent)}
+.zukan-where{font-size:15px;border-top:1px dashed var(--line);padding-top:8px}
+.zukan-limit{font-size:15px;color:var(--muted)}
+.zukan-mark{display:inline-block;font-size:12.5px;line-height:1.8;border:1px solid var(--line);border-radius:999px;padding:0 10px;color:var(--muted);margin:2px 0 4px;background:var(--bg)}
+.zukan-mini{padding:0 14px 4px}
+.zukan-mini>h3{font-size:16.5px}
+.zukan-card td:first-child{white-space:nowrap}
+
+figure{margin:22px 0}figcaption{font-size:14px;color:var(--muted);line-height:1.7} .window{max-width:min(550px,100%);margin:12px auto}.lead{font-size:19px}.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}.compare figure{min-width:0;margin:10px 0}.note{border-left:3px solid var(--accent);padding:8px 14px;background:var(--panel)}@media(max-width:540px){.compare{grid-template-columns:1fr}}
+</style></head><body>
+<div class="layout"><nav class="toc" aria-label="目次"><h2>色ツヤ工房 使用手引書</h2><a href="#ch-01">色ツヤ工房 使用手引書</a><a href="#ch-02">必要なもの</a><a href="#ch-03">始め方</a><a href="#ch-04">かんたんで整える</a><a href="#ch-05">くわしくで整える</a><a href="#ch-06">保存と再開</a><a href="#ch-07">困ったとき</a><a href="#ch-08">商用ライセンス</a></nav><main>
+<section class="chapter" id="ch-01"><h1>色ツヤ工房 使用手引書</h1>
+<p class="lead">lilToon アバターの明るさ・色味・陰影・ツヤを、部位ごとに調整します</p>
+<ul><li>全体の明るさや色味を、4本のスライダーで整えます。</li><li>顔・髪・衣装など、気になる部分だけ調整できます。</li><li>光や雰囲気を試し、自動保存した続きから再開できます。</li></ul>
+<p>まずは「始め方」から進めてください。分からなくなったら、目次から「困ったとき」へ戻れます。画像を押すと、大きく見られます。窓の［<span data-ui="使用手引書">使用手引書</span>］から、この手引書を開けます。</p>
+<figure><img src="images/07_scene_after.png" alt="衣装を着たアバターの調整例。元のアバターを複製して整えています。" loading="lazy" width="559" height="486"><figcaption>衣装を着たアバターの調整例。元のアバターを複製して整えています。</figcaption></figure>
+<p>この手引書は、色ツヤ工房 0.6.0-preview.1 の画面に合わせています。画像のモデルは MANUKA と ReTulpe for Manuka pink です。</p>
+</section>
+<section class="chapter" id="ch-02"><h1>必要なもの</h1>
+<ol><li>Unity 2022.3 で、VRChat の BRP のプロジェクトを開きます。</li><li>lilToon と、3D 創作スタジオを入れておきます。</li><li>調整したいアバターをシーンに置き、衣装も表示しておきます。</li></ol>
+<p>動作を確かめた lilToon は 2.4.1 です。ほかの版でも、版の警告が出るだけなら始められます。下の画像は 2.3.4 の警告です。lilToon が入っていないと、始められません。</p>
+<figure><img class=window src="images/02_start_avatar.png" alt="アバターを選んだ開始画面。lilToon の版の警告があっても、調整を始められます。" loading="lazy" width="550" height="613"><figcaption>アバターを選んだ開始画面。lilToon の版の警告があっても、調整を始められます。</figcaption></figure>
+<p class="note">補足：URP では、プロジェクトの描画方式に合う環境が必要です。</p>
+</section>
+<section class="chapter" id="ch-03"><h1>始め方</h1>
+<ol><li>Unity のメニューで <code data-ui="Tools/Irotsuya Koubo/Open">Tools/Irotsuya Koubo/Open</code> を押します。ほかの工房が開いているときは、上の切り替えの行の［<span data-ui="色ツヤ工房">色ツヤ工房</span>］からも開けます。</li><li>Hierarchy（シーンの中の物の一覧）から、衣装を含むアバター全体を、［<span data-ui="アバター">アバター</span>］の欄へ入れます。</li><li>［<span data-ui="写真寄り">写真寄り</span>］か［<span data-ui="アニメ寄り">アニメ寄り</span>］を選びます。迷ったら、写真寄りから試せます。</li><li>［<span data-ui="照明の数">照明の数</span>］を選びます。最初は8です。0なら照明を置きません。後からも変えられます。</li><li>［<span data-ui="調整を始める">調整を始める</span>］を押します。編集用の複製ができ、調整の画面に切り替わります。</li></ol>
+<figure><img class=window src="images/01_start_empty.png" alt="開いた直後の開始画面。上の行で工房やモードを切り替えます。" loading="lazy" width="550" height="613"><figcaption>開いた直後の開始画面。上の行で工房やモードを切り替えます。</figcaption></figure>
+<figure><img class=window src="images/03_start_zero.png" alt="照明を置きたくないときは、照明の数を0にします。" loading="lazy" width="550" height="613"><figcaption>照明を置きたくないときは、照明の数を0にします。</figcaption></figure>
+<p class="note">元のアバターは変わりません。編集用の複製を見ながら、少しずつ試してください。</p>
+</section>
+<section class="chapter" id="ch-04"><h1>かんたんで整える</h1>
+<ol><li>上の［<span data-ui="かんたん">かんたん</span>］を押します。</li><li>［<span data-ui="写真寄り">写真寄り</span>］か［<span data-ui="アニメ寄り">アニメ寄り</span>］を試し、近づけたい雰囲気を選びます。雰囲気を変えると、調整値も変わるので、先に選ぶと進めやすくなります。</li><li>次の4本を少しずつ動かし、Scene（アバターを見る画面）で確かめます。</li></ol>
+<table><thead><tr><th>スライダー</th><th>整えること</th></tr></thead><tbody>
+<tr><td>［<span data-ui="全体の明るさ">全体の明るさ</span>］</td><td>アバター全体を、暗く・明るくします。</td></tr>
+<tr><td>［<span data-ui="全体の色味">全体の色味</span>］</td><td>冷たい色・暖かい色へ寄せます。</td></tr>
+<tr><td>［<span data-ui="全体の陰の濃さ">全体の陰の濃さ</span>］</td><td>陰を、薄く・濃くします。</td></tr>
+<tr><td>［<span data-ui="全体のつや">全体のつや</span>］</td><td>つやを、控えめ・強めにします。</td></tr></tbody></table>
+<figure><img class=window src="images/04_simple.png" alt="かんたんの画面。上から雰囲気、全体、部分の明るさの順です。" loading="lazy" width="550" height="613"><figcaption>かんたんの画面。上から雰囲気、全体、部分の明るさの順です。</figcaption></figure>
+<figure><img class=window src="images/06_adjusted.png" alt="4本を少しずつ動かした例。全体の明るさ-0.18、色味0.06、陰の濃さ-0.15、つや0.18です。" loading="lazy" width="550" height="613"><figcaption>4本を少しずつ動かした例。全体の明るさ-0.18、色味0.06、陰の濃さ-0.15、つや0.18です。</figcaption></figure>
+<div class="compare"><figure><img src="images/05_scene_before.png" alt="調整前。同じ照明・構図で見ています。" loading="lazy" width="559" height="486"><figcaption>調整前。同じ照明・構図で見ています。</figcaption></figure>
+<figure><img src="images/07_scene_after.png" alt="調整後。全体の明るさを少し抑え、暖かい色味にしています。" loading="lazy" width="559" height="486"><figcaption>調整後。全体の明るさを少し抑え、暖かい色味にしています。</figcaption></figure>
+</div>
+<h2>一部分だけ明るくしたい</h2><p>下へスクロールして、「<span data-ui="部分の明るさ">部分の明るさ</span>」を使います。［<span data-ui="頭部">頭部</span>］［<span data-ui="胴体">胴体</span>］［<span data-ui="腕・手">腕・手</span>］［<span data-ui="脚・足">脚・足</span>］［<span data-ui="衣装・付属物">衣装・付属物</span>］の5つのグループごとに変えられます。全体の調整に、部分の調整が重なります。</p>
+<figure><img class=window src="images/08_groups.png" alt="下へスクロールした部分の明るさ。頭部だけを少し明るくしています。" loading="lazy" width="550" height="613"><figcaption>下へスクロールした部分の明るさ。頭部だけを少し明るくしています。</figcaption></figure>
+<h2>変えすぎたら戻す</h2><p>上の［<span data-ui="くわしく">くわしく</span>］へ切り替えると、スライダーの横に［<span data-ui="戻す">戻す</span>］が出ます。その項目を始めの見た目へ戻せます。部分の［<span data-ui="戻す">戻す</span>］では、全体やグループの調整は残ります。直前の操作を取り消すときは上の［<span data-ui="↶">↶</span>］、取り消した操作をやり直すときは［<span data-ui="↷">↷</span>］を押します。</p>
+</section>
+<section class="chapter" id="ch-05"><h1>くわしくで整える</h1>
+<p>上の［<span data-ui="くわしく">くわしく</span>］を押すと、4つのタブが出ます。かんたんと同じ編集なので、切り替えても値は残ります。</p>
+<h2>［<span data-ui="全体を整える">全体を整える</span>］</h2><p>部分ごとの違いを保ちながら、全体の明るさ・色味・陰の濃さ・つやを整えます。</p>
+<figure><img class=window src="images/09_overall.png" alt="くわしくの全体を整えるタブ。かんたんで変えた値も、そのまま使います。" loading="lazy" width="550" height="613"><figcaption>くわしくの全体を整えるタブ。かんたんで変えた値も、そのまま使います。</figcaption></figure>
+<h2>［<span data-ui="部分を整える">部分を整える</span>］</h2><ol><li>［<span data-ui="調整するグループ">調整するグループ</span>］で、頭部や衣装などを選びます。</li><li>部位のボタンで、顔や髪などを選びます。</li><li>その場所のスライダーを動かします。グループ全体と個別の部位は、別々に調整できます。</li></ol>
+<figure><img class=window src="images/10_parts.png" alt="部分を整えるタブ。頭部の中から顔を選んでいます。" loading="lazy" width="550" height="613"><figcaption>部分を整えるタブ。頭部の中から顔を選んでいます。</figcaption></figure>
+<h2>［<span data-ui="光を整える">光を整える</span>］</h2><p>［<span data-ui="照明の数">照明の数</span>］は、0〜32を4灯ずつ選べます。［<span data-ui="光全体の強さ">光全体の強さ</span>］と［<span data-ui="光を整える場所">光を整える場所</span>］で、全体やグループごとの光を変えます。光の向きは、アバター自身から見た左右です。</p>
+<figure><img class=window src="images/11_lighting.png" alt="光を整えるタブ。8灯を置き、顔まわりの光を調整する画面です。" loading="lazy" width="550" height="613"><figcaption>光を整えるタブ。8灯を置き、顔まわりの光を調整する画面です。</figcaption></figure>
+<p>1灯ずつ変えるときは、［<span data-ui="このグループの光を1灯ずつ調整">このグループの光を1灯ずつ調整</span>］を開きます。戻るときは［<span data-ui="グループ全体の調整に戻る">グループ全体の調整に戻る</span>］を押します。材質の陰の濃さと、光が床や体に落とす影は別の設定です。</p>
+<figure><img class="window" src="images/20_light_group_lower.png" alt="光のグループの下の方。このグループの光を1灯ずつ調整から、個別の調整へ進みます。" loading="lazy" width="550" height="613"><figcaption>下へスクロールすると、［このグループの光を1灯ずつ調整］があります。</figcaption></figure>
+<figure><img class=window src="images/12_one_light.png" alt="1灯ずつの調整。光の種類や強さ、左右・上下を変えられます。" loading="lazy" width="550" height="613"><figcaption>1灯ずつの調整。光の種類や強さ、左右・上下を変えられます。</figcaption></figure>
+<h2>［<span data-ui="どこを整えるかの確認 (30)">どこを整えるかの確認 (30)</span>］</h2><p>かっこの数は、確認が必要な場所の数です。画像では30件です。狙った場所が変わらないときは、このタブで、色を付ける場所と部位の対応を確かめます。確認待ちが0件のときは、［<span data-ui="すべての場所を表示（自動候補・確認済みを含む）">すべての場所を表示（自動候補・確認済みを含む）</span>］に印を付けます。［<span data-ui="Sceneで場所を選ぶ">Sceneで場所を選ぶ</span>］で場所を見て、部位を選び、［<span data-ui="この部位で確定">この部位で確定</span>］を押します。</p>
+<figure><img class=window src="images/13_review.png" alt="確認のタブ。外への参照のお知らせも、ここに出ます。" loading="lazy" width="550" height="613"><figcaption>確認のタブ。外への参照のお知らせも、ここに出ます。</figcaption></figure>
+<p>身体が1つにまとまっているときは、使える場合に［<span data-ui="身体を細かく分けて調整">身体を細かく分けて調整</span>］が出ます。押せないときは、その下の理由を確かめます。</p>
+</section>
+<section class="chapter" id="ch-06"><h1>保存と再開</h1>
+<h2>自動で保存されます</h2><p>スライダーを変えると、自動で保存されます。窓の下が「<span data-ui="✓ 自動で保存しました">✓ 自動で保存しました</span>」になるまで待ってから、窓を閉じます。保存できていないときは、理由を確かめて［<span data-ui="保存を再試行">保存を再試行</span>］を押します。</p>
+<h2>続きから再開する</h2><ol><li>色ツヤ工房を開き直します。前の編集がそのまま出たら、続けて調整できます。</li><li>開始画面が出たときは、「<span data-ui="以前の編集を開く">以前の編集を開く</span>」から、保存した編集を選びます。</li><li>編集用シーンが閉じている案内が出たら、［<span data-ui="編集用シーンを開く">編集用シーンを開く</span>］を押します。</li></ol>
+<figure><img class=window src="images/16_resume_list.png" alt="開始画面の以前の編集を開く。［<span data-ui="保存した編集を選んでください">保存した編集を選んでください</span>］から、アバター名を選んで再開します。" loading="lazy" width="550" height="613"><figcaption>開始画面の以前の編集を開く。［<span data-ui="保存した編集を選んでください">保存した編集を選んでください</span>］から、アバター名を選んで再開します。</figcaption></figure>
+<figure><img class=window src="images/17_resumed.png" alt="窓を閉じて再開した画面。調整した値と8灯の設定を保っています。" loading="lazy" width="550" height="613"><figcaption>窓を閉じて再開した画面。調整した値と8灯の設定を保っています。</figcaption></figure>
+<h2>今の雰囲気を残す</h2><ol><li>［<span data-ui="くわしく">くわしく</span>］に切り替え、［<span data-ui="今の見た目を雰囲気として保存">今の見た目を雰囲気として保存</span>］を開きます。</li><li>［<span data-ui="保存する名前">保存する名前</span>］を入れ、［<span data-ui="別名で保存">別名で保存</span>］を押します。</li><li>後で使うときは、上の［<span data-ui="雰囲気">雰囲気</span>］の欄から選んで［<span data-ui="適用">適用</span>］を押します。見つからないときは［<span data-ui="一覧を更新">一覧を更新</span>］を押します。</li></ol>
+<figure><img class=window src="images/14_preset_save.png" alt="今の見た目を雰囲気として保存する画面。分かる名前を付けて残します。" loading="lazy" width="550" height="613"><figcaption>今の見た目を雰囲気として保存する画面。分かる名前を付けて残します。</figcaption></figure>
+<figure><img class=window src="images/15_saved_preset.png" alt="保存した雰囲気を選んだ画面。別の雰囲気を選ぶときも、この欄を使います。" loading="lazy" width="550" height="613"><figcaption>保存した雰囲気を選んだ画面。別の雰囲気を選ぶときも、この欄を使います。</figcaption></figure>
+<p>雰囲気は、見た目の設定のひとまとまりです。編集中のアバターや編集の続きは、自動保存の編集データに残ります。元のアバターは変わりません。</p>
+</section>
+<section class="chapter" id="ch-07"><h1>困ったとき</h1>
+<h2>lilToon が無い・版の警告が出る</h2><p>lilToon が無いときは、先にプロジェクトへ入れてください。2.4.1 以外の版の警告だけなら始められます。見え方が少し違う場合があるので、少しずつ試します。</p>
+<h2>「外への参照」と出る</h2><p>衣装などが、アバターの外にある物を指していたというお知らせです。色ツヤ工房は編集用の複製の中だけを直し、元は変えていません。見た目のために残した参照がある場合は、件数も表示します。衣装や体の見え方を確かめてください。</p>
+<h2>編集データはどこにある？</h2><p>Project（ファイルの一覧）の <code>Assets/GP23Sessions</code> にあります。編集用シーンや材質も一緒にあるので、途中のファイルだけを動かしたり、消したりしないでください。</p>
+<h2>元に戻したい</h2><ol><li>直前の変更は、上の［<span data-ui="↶">↶</span>］で戻します。</li><li>1項目だけ戻すときは、［<span data-ui="くわしく">くわしく</span>］に切り替え、その横の［<span data-ui="戻す">戻す</span>］を押します。</li><li>元のアバターを見るときは、［<span data-ui="別のアバターを選ぶ">別のアバターを選ぶ</span>］で編集を離れ、元のシーンに戻ります。元のアバターは変更されていません。</li></ol>
+<div class="compare"><figure><img src="images/18_face_before.png" alt="調整前の顔まわり。同じ構図で比べます。" loading="lazy" width="559" height="486"><figcaption>調整前の顔まわり。同じ構図で比べます。</figcaption></figure>
+<figure><img src="images/19_face_after.png" alt="調整後の顔まわり。衣装を表示したまま、明るさと色味を整えています。" loading="lazy" width="559" height="486"><figcaption>調整後の顔まわり。衣装を表示したまま、明るさと色味を整えています。</figcaption></figure>
+</div>
+</section>
+<section class="chapter" id="ch-08"><h1>商用ライセンス</h1>
+<p>個人利用は無料です。作った物を売るときは商用ライセンスが必要です。</p><figure><img class=window src="images/01_start_empty.png" alt="窓の上部にも、商用ライセンスの案内があります。" loading="lazy" width="550" height="613"><figcaption>窓の上部にも、商用ライセンスの案内があります。</figcaption></figure>
+
+</section>
+</main></div><div class="top"><button class="menu-btn" type="button">目次</button><a href="#ch-01">いちばん上へ</a></div>
+<div id="lightbox" role="dialog" aria-label="画像の拡大" aria-modal="true"><img alt="拡大した画像"></div>
+<script>
+(function(){
+  /* 手順の「できた」印は、読む人のブラウザにだけ残る。KEY は作品ごとに変える */
+  var KEY='GP23-manual-done', done={};
+  try{done=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(done))}catch(e){}}
+  document.querySelectorAll('section.chapter ol').forEach(function(ol){
+    var items=[].filter.call(ol.children,function(c){return c.tagName==='LI'});
+    if(!items.length||ol.closest('li'))return;
+    var parts=ol.classList.contains('parts'); /* 画面の部品の一覧は、手順ではないので「できた」を付けない */
+    ol.classList.add('steps');
+    /* CSS の番号は counter で付けるので、<ol start> の続き番号はここで渡す（渡さないと、どの ol も 1 から表示される） */
+    if(ol.start>1)ol.style.counterReset='step '+(ol.start-1);
+    var sec=ol.closest('section');
+    items.forEach(function(li,i){
+      var id=(sec?sec.id:'')+':'+i+':'+li.textContent.trim().slice(0,24);
+      li.classList.add('step');
+      if(parts)return;
+      var b=document.createElement('button');b.type='button';b.className='tick';
+      function paint(){li.classList.toggle('done',!!done[id]);b.textContent=done[id]?'戻す':'できた'}
+      b.onclick=function(){if(done[id])delete done[id];else done[id]=1;save();paint()};
+      li.insertBefore(b,li.firstChild);paint();
+    });
+  });
+  var lb=document.getElementById('lightbox'),lbi=lb.querySelector('img');
+  document.querySelectorAll('main img').forEach(function(im){im.onclick=function(){lbi.src=im.src;lb.classList.add('on')}});
+  lb.onclick=function(){lb.classList.remove('on')};
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on')});
+  var toc=document.querySelector('nav.toc');
+  document.querySelector('.menu-btn').onclick=function(){toc.classList.toggle('open')};
+  toc.addEventListener('click',function(e){if(e.target.tagName==='A')toc.classList.remove('open')});
+  var links=[].slice.call(toc.querySelectorAll('a[href^="#"]'));
+  var secs=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
+  function spy(){var y=window.scrollY+120,cur=0;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i});links.forEach(function(a,i){a.classList.toggle('on',i===cur)})}
+  window.addEventListener('scroll',spy,{passive:true});spy();
+})();
+</script></body></html>
