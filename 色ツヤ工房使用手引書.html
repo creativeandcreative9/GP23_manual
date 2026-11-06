@@ -63,13 +63,13 @@ th{background:var(--panel)}
 
 figure{margin:22px 0}figcaption{font-size:14px;color:var(--muted);line-height:1.7} .window{max-width:min(550px,100%);margin:12px auto}.lead{font-size:19px}.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}.compare figure{min-width:0;margin:10px 0}.note{border-left:3px solid var(--accent);padding:8px 14px;background:var(--panel)}@media(max-width:540px){.compare{grid-template-columns:1fr}}
 </style></head><body>
-<div class="layout"><nav class="toc" aria-label="目次"><h2>色ツヤ工房 使用手引書</h2><a href="#ch-01">色ツヤ工房 使用手引書</a><a href="#ch-02">必要なもの</a><a href="#ch-03">始め方</a><a href="#ch-04">かんたんで整える</a><a href="#ch-05">くわしくで整える</a><a href="#ch-presets">プリセットで整える</a><a href="#ch-06">保存と再開</a><a href="#ch-07">困ったとき</a><a href="#ch-08">商用ライセンス</a></nav><main>
+<div class="layout"><nav class="toc" aria-label="目次"><h2>色ツヤ工房 使用手引書</h2><a href="#ch-01">色ツヤ工房 使用手引書</a><a href="#ch-02">必要なもの</a><a href="#ch-03">始め方</a><a href="#ch-04">かんたんで整える</a><a href="#ch-05">くわしくで整える</a><a href="#ch-presets">プリセットで整える</a><a href="#ch-settings">置く場所を選ぶ（設定）</a><a href="#ch-06">保存と再開</a><a href="#ch-07">困ったとき</a><a href="#ch-08">商用ライセンス</a></nav><main>
 <section class="chapter" id="ch-01"><h1>色ツヤ工房 使用手引書</h1>
 <p class="lead">lilToon アバターの明るさ・色味・陰影・ツヤを、部位ごとに調整します</p>
-<ul><li>全体の明るさや色味を、4本のスライダーで整えます。</li><li>顔・髪・衣装など、気になる部分だけ調整できます。</li><li>写真寄り・アニメ寄り・温かい感じなどのプリセットを、押すだけで当てられます。</li><li>光や雰囲気を試し、自動保存した続きから再開できます。</li></ul>
+<ul><li>全体の明るさや色味を、4本のスライダーで整えます。</li><li>顔・髪・衣装など、気になる部分だけ調整できます。</li><li>写真寄り・アニメ寄り・温かい感じなどのプリセットを、押すだけで当てられます。</li><li>線の太さや、ポーズ工房で撮る写真の光のにじみ・やわらかさも決められます（1.3.0 以降）。</li><li>照明とアバターを、今開いているシーンに置いて整えることもできます（1.3.0 以降）。</li><li>光や雰囲気を試し、自動保存した続きから再開できます。</li></ul>
 <p>まずは「始め方」から進めてください。分からなくなったら、目次から「困ったとき」へ戻れます。画像を押すと、大きく見られます。窓の［<span data-ui="使用手引書">使用手引書</span>］から、この手引書を開けます。</p>
 <figure><img src="images/07_scene_after.png" alt="衣装を着たアバターの調整例。元のアバターを複製して整えています。" loading="lazy" width="559" height="486"><figcaption>衣装を着たアバターの調整例。元のアバターを複製して整えています。</figcaption></figure>
-<p>この手引書は、色ツヤ工房 0.6.0-preview.1 の画面に合わせています。「プリセットで整える」の章は、1.1.0 の画面です。画像のモデルは MANUKA と ReTulpe for Manuka pink です。</p>
+<p>この手引書は、色ツヤ工房 0.6.0-preview.1 の画面に合わせています。「プリセットで整える」の章は、1.1.0 の画面です。線の太さ・撮影の効果・置く場所の節は、1.3.0 の画面です。画像のモデルは MANUKA と ReTulpe for Manuka pink です。</p>
 </section>
 <section class="chapter" id="ch-02"><h1>必要なもの</h1>
 <ol><li>Unity 2022.3 で、VRChat の BRP のプロジェクトを開きます。</li><li>lilToon と、3D 創作スタジオを入れておきます。</li><li>調整したいアバターをシーンに置き、衣装も表示しておきます。</li></ol>
@@ -81,16 +81,20 @@ figure{margin:22px 0}figcaption{font-size:14px;color:var(--muted);line-height:1.
 <ol><li>Unity のメニューで <code data-ui="Tools/Irotsuya Koubo/Open">Tools/Irotsuya Koubo/Open</code> を押します。ほかの工房が開いているときは、上の切り替えの行の［<span data-ui="色ツヤ工房">色ツヤ工房</span>］からも開けます。</li><li>Hierarchy（シーンの中の物の一覧）から、衣装を含むアバター全体を、［<span data-ui="アバター">アバター</span>］の欄へ入れます。</li><li>［<span data-ui="写真寄り">写真寄り</span>］か［<span data-ui="アニメ寄り">アニメ寄り</span>］を選びます。迷ったら、写真寄りから試せます。</li><li>［<span data-ui="照明の数">照明の数</span>］を選びます。最初は8です。0なら照明を置きません。後からも変えられます。</li><li>［<span data-ui="調整を始める">調整を始める</span>］を押します。編集用の複製ができ、調整の画面に切り替わります。</li></ol>
 <figure><img class=window src="images/01_start_empty.png" alt="開いた直後の開始画面。上の行で工房やモードを切り替えます。" loading="lazy" width="550" height="613"><figcaption>開いた直後の開始画面。上の行で工房やモードを切り替えます。</figcaption></figure>
 <figure><img class=window src="images/03_start_zero.png" alt="照明を置きたくないときは、照明の数を0にします。" loading="lazy" width="550" height="613"><figcaption>照明を置きたくないときは、照明の数を0にします。</figcaption></figure>
-<p class="note">元のアバターは変わりません。編集用の複製を見ながら、少しずつ試してください。</p>
+<p>開始画面の「置き方」に、照明とアバターを置く場所が出ます。初めは「別の編集用シーン」で、今までどおり複製を作ります。変えるときは［<span data-ui="設定を変える">設定を変える</span>］か、上の［<span data-ui="設定">設定</span>］を押します（1.3.0 以降）。くわしくは「<a href="#ch-settings">置く場所を選ぶ（設定）</a>」を見ます。</p>
+<figure><img class=window src="images/27_start_placement.png" alt="アバターを選んだ開始画面。照明の数の下に、置き方：別の編集用シーンと、設定を変えるのボタンがあります。" loading="lazy" width="550" height="613"><figcaption>開始画面の置き方。初めは別の編集用シーンです（1.3.0）。</figcaption></figure>
+<p class="note">初めの設定では、元のアバターは変わりません。編集用の複製を見ながら、少しずつ試してください。</p>
 </section>
 <section class="chapter" id="ch-04"><h1>かんたんで整える</h1>
-<ol><li>上の［<span data-ui="かんたん">かんたん</span>］を押します。</li><li>［<span data-ui="写真寄り">写真寄り</span>］か［<span data-ui="アニメ寄り">アニメ寄り</span>］を試し、近づけたい雰囲気を選びます。雰囲気を変えると、調整値も変わるので、先に選ぶと進めやすくなります。ほかのプリセットも試すときは、「<a href="#ch-presets">プリセットで整える</a>」を見ます。</li><li>次の4本を少しずつ動かし、Scene（アバターを見る画面）で確かめます。</li></ol>
+<ol><li>上の［<span data-ui="かんたん">かんたん</span>］を押します。</li><li>［<span data-ui="写真寄り">写真寄り</span>］か［<span data-ui="アニメ寄り">アニメ寄り</span>］を試し、近づけたい雰囲気を選びます。雰囲気を変えると、調整値も変わるので、先に選ぶと進めやすくなります。ほかのプリセットも試すときは、「<a href="#ch-presets">プリセットで整える</a>」を見ます。</li><li>次のスライダーを少しずつ動かし、Scene（アバターを見る画面）で確かめます。</li></ol>
 <table><thead><tr><th>スライダー</th><th>整えること</th></tr></thead><tbody>
 <tr><td>［<span data-ui="全体の明るさ">全体の明るさ</span>］</td><td>アバター全体を、暗く・明るくします。</td></tr>
 <tr><td>［<span data-ui="全体の色味">全体の色味</span>］</td><td>冷たい色・暖かい色へ寄せます。</td></tr>
 <tr><td>［<span data-ui="全体の陰の濃さ">全体の陰の濃さ</span>］</td><td>陰を、薄く・濃くします。</td></tr>
-<tr><td>［<span data-ui="全体のつや">全体のつや</span>］</td><td>つやを、控えめ・強めにします。</td></tr></tbody></table>
+<tr><td>［<span data-ui="全体のつや">全体のつや</span>］</td><td>つやを、控えめ・強めにします。</td></tr>
+<tr><td>［<span data-ui="全体の線の太さ">全体の線の太さ</span>］</td><td>線（輪郭線）を、細く・太くします。もともと線のある材質だけが変わります（1.3.0 以降）。</td></tr></tbody></table>
 <figure><img class=window src="images/04_simple.png" alt="かんたんの画面。上から雰囲気、全体、部分の明るさの順です。" loading="lazy" width="550" height="613"><figcaption>かんたんの画面。上から雰囲気、全体、部分の明るさの順です。</figcaption></figure>
+<figure><img class=window src="images/23_simple_outline.png" alt="かんたんの画面。全体のつやの下に、全体の線の太さのスライダーがあります。透明感-効果大を当て、線の太さは-0.30です。" loading="lazy" width="550" height="613"><figcaption>1.3.0 のかんたんの画面。つやの下に、線の太さがあります。</figcaption></figure>
 <figure><img class=window src="images/06_adjusted.png" alt="4本を少しずつ動かした例。全体の明るさ-0.18、色味0.06、陰の濃さ-0.15、つや0.18です。" loading="lazy" width="550" height="613"><figcaption>4本を少しずつ動かした例。全体の明るさ-0.18、色味0.06、陰の濃さ-0.15、つや0.18です。</figcaption></figure>
 <div class="compare"><figure><img src="images/05_scene_before.png" alt="調整前。同じ照明・構図で見ています。" loading="lazy" width="559" height="486"><figcaption>調整前。同じ照明・構図で見ています。</figcaption></figure>
 <figure><img src="images/07_scene_after.png" alt="調整後。全体の明るさを少し抑え、暖かい色味にしています。" loading="lazy" width="559" height="486"><figcaption>調整後。全体の明るさを少し抑え、暖かい色味にしています。</figcaption></figure>
@@ -101,8 +105,15 @@ figure{margin:22px 0}figcaption{font-size:14px;color:var(--muted);line-height:1.
 </section>
 <section class="chapter" id="ch-05"><h1>くわしくで整える</h1>
 <p>上の［<span data-ui="くわしく">くわしく</span>］を押すと、4つのタブが出ます。かんたんと同じ編集なので、切り替えても値は残ります。</p>
-<h2>［<span data-ui="全体を整える">全体を整える</span>］</h2><p>部分ごとの違いを保ちながら、全体の明るさ・色味・陰の濃さ・つやを整えます。</p>
+<h2>［<span data-ui="全体を整える">全体を整える</span>］</h2><p>部分ごとの違いを保ちながら、全体の明るさ・色味・陰の濃さ・つやを整えます。1.3.0 からは、線の太さも整えられます。［<span data-ui="部分を整える">部分を整える</span>］では、グループや部位ごとに線の太さを変えられます。線の太さは、もともと線のある材質だけに効きます。</p>
 <figure><img class=window src="images/09_overall.png" alt="くわしくの全体を整えるタブ。かんたんで変えた値も、そのまま使います。" loading="lazy" width="550" height="613"><figcaption>くわしくの全体を整えるタブ。かんたんで変えた値も、そのまま使います。</figcaption></figure>
+<h2 id="photo-effects">撮影の効果（1.3.0 以降）</h2><p>［<span data-ui="全体を整える">全体を整える</span>］を下へスクロールすると、「撮影の効果」があります。ポーズ工房で写真を撮るときに、画面全体にかける効果です。</p>
+<table><thead><tr><th>スライダー</th><th>整えること</th></tr></thead><tbody>
+<tr><td>［<span data-ui="光のにじみ">光のにじみ</span>］</td><td>明るい所から、光がふんわりにじみます。</td></tr>
+<tr><td>［<span data-ui="やわらかさ">やわらかさ</span>］</td><td>写真全体を、くっきり・ふんわりにします。</td></tr></tbody></table>
+<ul><li>色ツヤ工房の Scene の表示には出ません。アバターの材質にも残らないので、VRChat の中では変わりません。</li><li>ポーズ工房 1.7.0 以降で、色ツヤ工房で編集中のアバターを撮るときにかかります。かけたくないときは、ポーズ工房の［写真］タブで「色ツヤ工房の撮影の効果」の印を外します。</li><li>プリセットの［アニメ調-効果大］［透明感-効果大］［ふわゆる］には、線の太さと撮影の効果も入っています。</li></ul>
+<figure><img class=window src="images/24_photo_effects.png" alt="全体を整えるタブを下へスクロールした画面。全体の線の太さの下に、撮影の効果の光のにじみとやわらかさがあります。" loading="lazy" width="550" height="613"><figcaption>全体を整えるタブを下へスクロールしたところ。線の太さと、撮影の効果があります。</figcaption></figure>
+<figure><img src="images/25_photo_effect_compare.png" alt="ポーズ工房で同じ構図で撮った2枚の写真。左は効果なし、右は光のにじみとやわらかさがかかり、輪郭のまわりがふんわり光っています。" loading="lazy" width="1456" height="900"><figcaption>ポーズ工房で撮った写真。左は効果なし、右は透明感-効果大の効果あり（光のにじみ 0.55、やわらかさ 0.35）です。</figcaption></figure>
 <h2>［<span data-ui="部分を整える">部分を整える</span>］</h2><ol><li>［<span data-ui="調整するグループ">調整するグループ</span>］で、頭部や衣装などを選びます。</li><li>部位のボタンで、顔や髪などを選びます。</li><li>その場所のスライダーを動かします。グループ全体と個別の部位は、別々に調整できます。</li></ol>
 <figure><img class=window src="images/10_parts.png" alt="部分を整えるタブ。頭部の中から顔を選んでいます。" loading="lazy" width="550" height="613"><figcaption>部分を整えるタブ。頭部の中から顔を選んでいます。</figcaption></figure>
 <h2>［<span data-ui="光を整える">光を整える</span>］</h2><p>［<span data-ui="照明の数">照明の数</span>］は、0〜32を4灯ずつ選べます。［<span data-ui="光全体の強さ">光全体の強さ</span>］と［<span data-ui="光を整える場所">光を整える場所</span>］で、全体やグループごとの光を変えます。光の向きは、アバター自身から見た左右です。</p>
@@ -115,12 +126,25 @@ figure{margin:22px 0}figcaption{font-size:14px;color:var(--muted);line-height:1.
 <p>身体が1つにまとまっているときは、使える場合に［<span data-ui="身体を細かく分けて調整">身体を細かく分けて調整</span>］が出ます。押せないときは、その下の理由を確かめます。</p>
 </section>
 <section class="chapter" id="ch-presets"><h1>プリセットで整える</h1>
-<p>上の［<span data-ui="プリセット">プリセット</span>］を押すと、雰囲気のプリセットが縦に並びます。押すだけで、明るさ・色味・陰・つやをまとめて変えられます（1.1.0 以降）。</p>
+<p>上の［<span data-ui="プリセット">プリセット</span>］を押すと、雰囲気のプリセットが縦に並びます。押すだけで、明るさ・色味・陰・つやをまとめて変えられます（1.1.0 以降）。1.3.0 からは、線の太さと<a href="#photo-effects">撮影の効果</a>も入ったプリセットがあります。</p>
 <ol><li>上の［<span data-ui="プリセット">プリセット</span>］を押します。［<span data-ui="くわしく">くわしく</span>］の右隣りにあります。</li><li>使いたいプリセットを押します。今の編集に当たり、選んだものに「●」が付きます。</li><li>Scene で確かめます。ほかのプリセットも、押して比べられます。元に戻すときは、上の［<span data-ui="↶">↶</span>］を押します。</li><li>さらに整えるときは、［<span data-ui="かんたん">かんたん</span>］か［<span data-ui="くわしく">くわしく</span>］へ切り替えます。プリセットを当てた見た目から、続けて調整できます。</li></ol>
 <figure><img class=window src="images/21_presets.png" alt="プリセットの画面。写真寄り・アニメ寄り・温かい感じが縦に並び、温かい感じに●が付いています。" loading="lazy" width="550" height="613"><figcaption>プリセットの画面。温かい感じを当てたところです。</figcaption></figure>
 <figure><img src="images/22_preset_compare.png" alt="同じアバター・同じポーズ・同じ構図で、写真寄り・アニメ寄り・温かい感じを撮り比べた画像。温かい感じは、肌と髪が赤みのある明るい色になります。" loading="lazy" width="1368" height="1042"><figcaption>同じ構図で、プリセットだけを変えた例です。左から写真寄り、アニメ寄り、温かい感じです。</figcaption></figure>
 <p class="note">プリセットは、今後の更新で増えます。画面の一覧が、この手引書の画像より多いことがあります。使い方は、どのプリセットも同じです。</p>
 <p>自分で保存した雰囲気も、この一覧に出ます。保存のしかたは「<a href="#ch-06">保存と再開</a>」の「今の雰囲気を残す」にあります。ポーズ工房 1.6.0 以降では、ポーズ工房の［<span data-ui="プリセット">プリセット</span>］からも、同じプリセットを呼び出して撮影できます。</p>
+</section>
+<section class="chapter" id="ch-settings"><h1>置く場所を選ぶ（設定）</h1>
+<p>照明とアバターを、どこに置いて整えるかを選べます（1.3.0 以降）。窓の上の［<span data-ui="設定">設定</span>］を押します。［<span data-ui="使用手引書">使用手引書</span>］の右隣りにあります。もう一度押すか、［<span data-ui="戻る">戻る</span>］を押すと元の画面に戻ります。</p>
+<p>選んだ置き方は、次に［<span data-ui="調整を始める">調整を始める</span>］ときから使います。今の編集の置き場所は変わりません。設定は、プロジェクトごとに残ります。</p>
+<table><thead><tr><th>照明を置く場所</th><th>アバターの扱い</th><th>向いていること</th></tr></thead><tbody>
+<tr><td>［<span data-ui="別の編集用シーン（今までどおり）">別の編集用シーン（今までどおり）</span>］</td><td>複製を作ります</td><td>元のシーンを変えずに試す（初めの設定）</td></tr>
+<tr><td>［<span data-ui="今開いているシーン">今開いているシーン</span>］</td><td>［<span data-ui="複製を今のシーンに置く">複製を今のシーンに置く</span>］</td><td>今のシーンの空や光の中で、複製を見ながら整える</td></tr>
+<tr><td>［<span data-ui="今開いているシーン">今開いているシーン</span>］</td><td>［<span data-ui="元のアバターに直接">元のアバターに直接</span>］</td><td>元のアバターそのものを整える</td></tr></tbody></table>
+<figure><img class=window src="images/26_settings.png" alt="設定の画面。照明を置く場所で今開いているシーン、アバターの扱いで複製を今のシーンに置くを選んでいます。" loading="lazy" width="550" height="613"><figcaption>設定の画面。今開いているシーンと、複製を今のシーンに置くを選んだところです。</figcaption></figure>
+<h2>今開いているシーンに置くとき</h2><ul><li>始める前に、シーンを保存しておきます（File &gt; Save）。保存していない変更があると、始められません。</li><li>複製を置くときは、アバターのあるシーンを、今のシーン（アクティブなシーン）にしておきます。</li><li>シーンは、始めたとき・再開したとき・終了したとき・照明の数を変えたとき・片付けたときに保存されます。</li><li>置いた照明には EditorOnly の印が付くので、アップロードには含まれません。</li><li>終了しても、置いた物（複製・照明・材質の差し替え）はシーンに残ります。続きは「<span data-ui="以前の編集を開く">以前の編集を開く</span>」から再開できます。</li></ul>
+<h2>置いた物を片付ける</h2><p>［<span data-ui="置いたものを片付ける">置いたものを片付ける</span>］を押すと、置いた複製と照明を消し、元のアバターの材質を始める前に戻します。このボタンは、編集中の画面の上の方と、設定の画面にあります。編集のデータ（値と履歴）も消えるので、残したい見た目は、先に「<a href="#ch-06">今の雰囲気を残す</a>」で保存します。</p>
+<h2>元のアバターに直接整えるとき</h2><ul><li>始める前に、確かめる窓が出ます。</li><li>元のアバターの材質を、編集用の材質に差し替えます。元の材質のファイルそのものは変えません。</li><li>照明はアバターの外に置きます。アバターを動かすと、照明も付いてきます。</li><li>［<span data-ui="置いたものを片付ける">置いたものを片付ける</span>］で、始める前の材質に戻ります。プレハブの上書きの有無も戻ります。</li><li>［<span data-ui="身体を細かく分けて調整">身体を細かく分けて調整</span>］は使えません（形状を差し替えるため）。使うときは、複製で整えます。</li><li>片付ける前にアップロードすると、編集用の材質のままアップロードされます。編集用の材質は <code>Assets/GP23Sessions</code> にあるので、このフォルダーは消さないでください。</li></ul>
+<p class="note">ポーズ工房 1.7.0 以降の［<span data-ui="プリセット">プリセット</span>］も、この設定に従います。元のアバターに直接のときは、ポーズ工房でも確かめる窓が出ます。</p>
 </section>
 <section class="chapter" id="ch-06"><h1>保存と再開</h1>
 <h2>自動で保存されます</h2><p>スライダーを変えると、自動で保存されます。窓の下が「<span data-ui="✓ 自動で保存しました">✓ 自動で保存しました</span>」になるまで待ってから、窓を閉じます。保存できていないときは、理由を確かめて［<span data-ui="保存を再試行">保存を再試行</span>］を押します。</p>
@@ -135,8 +159,10 @@ figure{margin:22px 0}figcaption{font-size:14px;color:var(--muted);line-height:1.
 <section class="chapter" id="ch-07"><h1>困ったとき</h1>
 <h2>lilToon が無い・版の警告が出る</h2><p>lilToon が無いときは、先にプロジェクトへ入れてください。2.4.1 以外の版の警告だけなら始められます。見え方が少し違う場合があるので、少しずつ試します。</p>
 <h2>「外への参照」と出る</h2><p>衣装などが、アバターの外にある物を指していたというお知らせです。色ツヤ工房は編集用の複製の中だけを直し、元は変えていません。見た目のために残した参照がある場合は、件数も表示します。衣装や体の見え方を確かめてください。</p>
-<h2>編集データはどこにある？</h2><p>Project（ファイルの一覧）の <code>Assets/GP23Sessions</code> にあります。編集用シーンや材質も一緒にあるので、途中のファイルだけを動かしたり、消したりしないでください。</p>
-<h2>元に戻したい</h2><ol><li>直前の変更は、上の［<span data-ui="↶">↶</span>］で戻します。</li><li>1項目だけ戻すときは、［<span data-ui="くわしく">くわしく</span>］に切り替え、その横の［<span data-ui="戻す">戻す</span>］を押します。</li><li>元のアバターを見るときは、［<span data-ui="別のアバターを選ぶ">別のアバターを選ぶ</span>］で編集を離れ、元のシーンに戻ります。元のアバターは変更されていません。</li></ol>
+<h2>編集データはどこにある？</h2><p>Project（ファイルの一覧）の <code>Assets/GP23Sessions</code> にあります。編集用シーンや材質も一緒にあるので、途中のファイルだけを動かしたり、消したりしないでください。今開いているシーンに置いた編集のフォルダーを、シーンの物が使っている間に消そうとすると、確かめる窓が出ます。先に［<span data-ui="置いたものを片付ける">置いたものを片付ける</span>］を押してください。</p>
+<h2>今開いているシーンで始められない</h2><p>シーンを保存していない、アバターが今のシーンに無い、前の編集の複製が残っている、などの理由が開始画面に出ます。案内のとおりにしてから、もう一度［<span data-ui="調整を始める">調整を始める</span>］を押します。</p>
+<h2>「片付けられない」と出る</h2><p>この編集の材質を使う物（差し替え中に複製した物など）が、シーンに残っています。出た名前の物の材質を戻すか、その物を消してから、もう一度［<span data-ui="置いたものを片付ける">置いたものを片付ける</span>］を押します。編集のデータは残っています。</p>
+<h2>元に戻したい</h2><ol><li>直前の変更は、上の［<span data-ui="↶">↶</span>］で戻します。</li><li>1項目だけ戻すときは、［<span data-ui="くわしく">くわしく</span>］に切り替え、その横の［<span data-ui="戻す">戻す</span>］を押します。</li><li>元のアバターを見るときは、［<span data-ui="別のアバターを選ぶ">別のアバターを選ぶ</span>］で編集を離れ、元のシーンに戻ります。初めの設定（別の編集用シーン）では、元のアバターは変更されていません。</li><li>今開いているシーンに置いたときは、［<span data-ui="置いたものを片付ける">置いたものを片付ける</span>］で、置いた物を消し、元のアバターの材質を戻します。</li></ol>
 <div class="compare"><figure><img src="images/18_face_before.png" alt="調整前の顔まわり。同じ構図で比べます。" loading="lazy" width="559" height="486"><figcaption>調整前の顔まわり。同じ構図で比べます。</figcaption></figure>
 <figure><img src="images/19_face_after.png" alt="調整後の顔まわり。衣装を表示したまま、明るさと色味を整えています。" loading="lazy" width="559" height="486"><figcaption>調整後の顔まわり。衣装を表示したまま、明るさと色味を整えています。</figcaption></figure>
 </div>
