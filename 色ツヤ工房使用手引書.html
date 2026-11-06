@@ -63,13 +63,13 @@ th{background:var(--panel)}
 
 figure{margin:22px 0}figcaption{font-size:14px;color:var(--muted);line-height:1.7} .window{max-width:min(550px,100%);margin:12px auto}.lead{font-size:19px}.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}.compare figure{min-width:0;margin:10px 0}.note{border-left:3px solid var(--accent);padding:8px 14px;background:var(--panel)}@media(max-width:540px){.compare{grid-template-columns:1fr}}
 </style></head><body>
-<div class="layout"><nav class="toc" aria-label="目次"><h2>色ツヤ工房 使用手引書</h2><a href="#ch-01">色ツヤ工房 使用手引書</a><a href="#ch-02">必要なもの</a><a href="#ch-03">始め方</a><a href="#ch-04">かんたんで整える</a><a href="#ch-05">くわしくで整える</a><a href="#ch-06">保存と再開</a><a href="#ch-07">困ったとき</a><a href="#ch-08">商用ライセンス</a></nav><main>
+<div class="layout"><nav class="toc" aria-label="目次"><h2>色ツヤ工房 使用手引書</h2><a href="#ch-01">色ツヤ工房 使用手引書</a><a href="#ch-02">必要なもの</a><a href="#ch-03">始め方</a><a href="#ch-04">かんたんで整える</a><a href="#ch-05">くわしくで整える</a><a href="#ch-presets">プリセットで整える</a><a href="#ch-06">保存と再開</a><a href="#ch-07">困ったとき</a><a href="#ch-08">商用ライセンス</a></nav><main>
 <section class="chapter" id="ch-01"><h1>色ツヤ工房 使用手引書</h1>
 <p class="lead">lilToon アバターの明るさ・色味・陰影・ツヤを、部位ごとに調整します</p>
-<ul><li>全体の明るさや色味を、4本のスライダーで整えます。</li><li>顔・髪・衣装など、気になる部分だけ調整できます。</li><li>光や雰囲気を試し、自動保存した続きから再開できます。</li></ul>
+<ul><li>全体の明るさや色味を、4本のスライダーで整えます。</li><li>顔・髪・衣装など、気になる部分だけ調整できます。</li><li>写真寄り・アニメ寄り・温かい感じなどのプリセットを、押すだけで当てられます。</li><li>光や雰囲気を試し、自動保存した続きから再開できます。</li></ul>
 <p>まずは「始め方」から進めてください。分からなくなったら、目次から「困ったとき」へ戻れます。画像を押すと、大きく見られます。窓の［<span data-ui="使用手引書">使用手引書</span>］から、この手引書を開けます。</p>
 <figure><img src="images/07_scene_after.png" alt="衣装を着たアバターの調整例。元のアバターを複製して整えています。" loading="lazy" width="559" height="486"><figcaption>衣装を着たアバターの調整例。元のアバターを複製して整えています。</figcaption></figure>
-<p>この手引書は、色ツヤ工房 0.6.0-preview.1 の画面に合わせています。画像のモデルは MANUKA と ReTulpe for Manuka pink です。</p>
+<p>この手引書は、色ツヤ工房 0.6.0-preview.1 の画面に合わせています。「プリセットで整える」の章は、1.1.0 の画面です。画像のモデルは MANUKA と ReTulpe for Manuka pink です。</p>
 </section>
 <section class="chapter" id="ch-02"><h1>必要なもの</h1>
 <ol><li>Unity 2022.3 で、VRChat の BRP のプロジェクトを開きます。</li><li>lilToon と、3D 創作スタジオを入れておきます。</li><li>調整したいアバターをシーンに置き、衣装も表示しておきます。</li></ol>
@@ -84,7 +84,7 @@ figure{margin:22px 0}figcaption{font-size:14px;color:var(--muted);line-height:1.
 <p class="note">元のアバターは変わりません。編集用の複製を見ながら、少しずつ試してください。</p>
 </section>
 <section class="chapter" id="ch-04"><h1>かんたんで整える</h1>
-<ol><li>上の［<span data-ui="かんたん">かんたん</span>］を押します。</li><li>［<span data-ui="写真寄り">写真寄り</span>］か［<span data-ui="アニメ寄り">アニメ寄り</span>］を試し、近づけたい雰囲気を選びます。雰囲気を変えると、調整値も変わるので、先に選ぶと進めやすくなります。</li><li>次の4本を少しずつ動かし、Scene（アバターを見る画面）で確かめます。</li></ol>
+<ol><li>上の［<span data-ui="かんたん">かんたん</span>］を押します。</li><li>［<span data-ui="写真寄り">写真寄り</span>］か［<span data-ui="アニメ寄り">アニメ寄り</span>］を試し、近づけたい雰囲気を選びます。雰囲気を変えると、調整値も変わるので、先に選ぶと進めやすくなります。ほかのプリセットも試すときは、「<a href="#ch-presets">プリセットで整える</a>」を見ます。</li><li>次の4本を少しずつ動かし、Scene（アバターを見る画面）で確かめます。</li></ol>
 <table><thead><tr><th>スライダー</th><th>整えること</th></tr></thead><tbody>
 <tr><td>［<span data-ui="全体の明るさ">全体の明るさ</span>］</td><td>アバター全体を、暗く・明るくします。</td></tr>
 <tr><td>［<span data-ui="全体の色味">全体の色味</span>］</td><td>冷たい色・暖かい色へ寄せます。</td></tr>
@@ -114,12 +114,20 @@ figure{margin:22px 0}figcaption{font-size:14px;color:var(--muted);line-height:1.
 <figure><img class=window src="images/13_review.png" alt="確認のタブ。外への参照のお知らせも、ここに出ます。" loading="lazy" width="550" height="613"><figcaption>確認のタブ。外への参照のお知らせも、ここに出ます。</figcaption></figure>
 <p>身体が1つにまとまっているときは、使える場合に［<span data-ui="身体を細かく分けて調整">身体を細かく分けて調整</span>］が出ます。押せないときは、その下の理由を確かめます。</p>
 </section>
+<section class="chapter" id="ch-presets"><h1>プリセットで整える</h1>
+<p>上の［<span data-ui="プリセット">プリセット</span>］を押すと、雰囲気のプリセットが縦に並びます。押すだけで、明るさ・色味・陰・つやをまとめて変えられます（1.1.0 以降）。</p>
+<ol><li>上の［<span data-ui="プリセット">プリセット</span>］を押します。［<span data-ui="くわしく">くわしく</span>］の右隣りにあります。</li><li>使いたいプリセットを押します。今の編集に当たり、選んだものに「●」が付きます。</li><li>Scene で確かめます。ほかのプリセットも、押して比べられます。元に戻すときは、上の［<span data-ui="↶">↶</span>］を押します。</li><li>さらに整えるときは、［<span data-ui="かんたん">かんたん</span>］か［<span data-ui="くわしく">くわしく</span>］へ切り替えます。プリセットを当てた見た目から、続けて調整できます。</li></ol>
+<figure><img class=window src="images/21_presets.png" alt="プリセットの画面。写真寄り・アニメ寄り・温かい感じが縦に並び、温かい感じに●が付いています。" loading="lazy" width="550" height="613"><figcaption>プリセットの画面。温かい感じを当てたところです。</figcaption></figure>
+<figure><img src="images/22_preset_compare.png" alt="同じアバター・同じポーズ・同じ構図で、写真寄り・アニメ寄り・温かい感じを撮り比べた画像。温かい感じは、肌と髪が赤みのある明るい色になります。" loading="lazy" width="1368" height="1042"><figcaption>同じ構図で、プリセットだけを変えた例です。左から写真寄り、アニメ寄り、温かい感じです。</figcaption></figure>
+<p class="note">プリセットは、今後の更新で増えます。画面の一覧が、この手引書の画像より多いことがあります。使い方は、どのプリセットも同じです。</p>
+<p>自分で保存した雰囲気も、この一覧に出ます。保存のしかたは「<a href="#ch-06">保存と再開</a>」の「今の雰囲気を残す」にあります。ポーズ工房 1.6.0 以降では、ポーズ工房の［<span data-ui="プリセット">プリセット</span>］からも、同じプリセットを呼び出して撮影できます。</p>
+</section>
 <section class="chapter" id="ch-06"><h1>保存と再開</h1>
 <h2>自動で保存されます</h2><p>スライダーを変えると、自動で保存されます。窓の下が「<span data-ui="✓ 自動で保存しました">✓ 自動で保存しました</span>」になるまで待ってから、窓を閉じます。保存できていないときは、理由を確かめて［<span data-ui="保存を再試行">保存を再試行</span>］を押します。</p>
 <h2>続きから再開する</h2><ol><li>色ツヤ工房を開き直します。前の編集がそのまま出たら、続けて調整できます。</li><li>開始画面が出たときは、「<span data-ui="以前の編集を開く">以前の編集を開く</span>」から、保存した編集を選びます。</li><li>編集用シーンが閉じている案内が出たら、［<span data-ui="編集用シーンを開く">編集用シーンを開く</span>］を押します。</li></ol>
 <figure><img class=window src="images/16_resume_list.png" alt="開始画面の以前の編集を開く。［<span data-ui="保存した編集を選んでください">保存した編集を選んでください</span>］から、アバター名を選んで再開します。" loading="lazy" width="550" height="613"><figcaption>開始画面の以前の編集を開く。［<span data-ui="保存した編集を選んでください">保存した編集を選んでください</span>］から、アバター名を選んで再開します。</figcaption></figure>
 <figure><img class=window src="images/17_resumed.png" alt="窓を閉じて再開した画面。調整した値と8灯の設定を保っています。" loading="lazy" width="550" height="613"><figcaption>窓を閉じて再開した画面。調整した値と8灯の設定を保っています。</figcaption></figure>
-<h2>今の雰囲気を残す</h2><ol><li>［<span data-ui="くわしく">くわしく</span>］に切り替え、［<span data-ui="今の見た目を雰囲気として保存">今の見た目を雰囲気として保存</span>］を開きます。</li><li>［<span data-ui="保存する名前">保存する名前</span>］を入れ、［<span data-ui="別名で保存">別名で保存</span>］を押します。</li><li>後で使うときは、上の［<span data-ui="雰囲気">雰囲気</span>］の欄から選んで［<span data-ui="適用">適用</span>］を押します。見つからないときは［<span data-ui="一覧を更新">一覧を更新</span>］を押します。</li></ol>
+<h2>今の雰囲気を残す</h2><ol><li>［<span data-ui="くわしく">くわしく</span>］に切り替え、［<span data-ui="今の見た目を雰囲気として保存">今の見た目を雰囲気として保存</span>］を開きます。</li><li>［<span data-ui="保存する名前">保存する名前</span>］を入れ、［<span data-ui="別名で保存">別名で保存</span>］を押します。</li><li>後で使うときは、上の［<span data-ui="雰囲気">雰囲気</span>］の欄から選んで［<span data-ui="適用">適用</span>］を押します。見つからないときは［<span data-ui="一覧を更新">一覧を更新</span>］を押します。上の［<span data-ui="プリセット">プリセット</span>］の一覧からも選べます。</li></ol>
 <figure><img class=window src="images/14_preset_save.png" alt="今の見た目を雰囲気として保存する画面。分かる名前を付けて残します。" loading="lazy" width="550" height="613"><figcaption>今の見た目を雰囲気として保存する画面。分かる名前を付けて残します。</figcaption></figure>
 <figure><img class=window src="images/15_saved_preset.png" alt="保存した雰囲気を選んだ画面。別の雰囲気を選ぶときも、この欄を使います。" loading="lazy" width="550" height="613"><figcaption>保存した雰囲気を選んだ画面。別の雰囲気を選ぶときも、この欄を使います。</figcaption></figure>
 <p>雰囲気は、見た目の設定のひとまとまりです。編集中のアバターや編集の続きは、自動保存の編集データに残ります。元のアバターは変わりません。</p>
