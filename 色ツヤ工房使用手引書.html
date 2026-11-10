@@ -74,27 +74,28 @@ figure{margin:22px 0}figcaption{font-size:14px;color:var(--muted);line-height:1.
 <section class="chapter" id="ch-02"><h1>必要なもの</h1>
 <ol><li>Unity 2022.3 で、VRChat の BRP のプロジェクトを開きます。</li><li>lilToon と、3D 創作スタジオを入れておきます。</li><li>調整したいアバターをシーンに置き、衣装も表示しておきます。</li></ol>
 <p>動作を確かめた lilToon は 2.4.1 です。ほかの版でも、版の警告が出るだけなら始められます。下の画像は 2.3.4 の警告です。lilToon が入っていないと、始められません。</p>
-<figure><img class=window src="images/02_start_avatar.png" alt="アバターを選んだ開始画面。lilToon の版の警告があっても、調整を始められます。" loading="lazy" width="550" height="613"><figcaption>アバターを選んだ開始画面。lilToon の版の警告があっても、調整を始められます。</figcaption></figure>
+<figure style="max-width:550px;margin:24px auto"><img src="images/20261110_avatar_dropdown.png" alt="アバターのプルダウンで対象を選び、置き方を確認して調整を始めます。以前の置き方の設定は保持されます。" loading="lazy" width="963" height="1072" style="display:block;width:100%;height:auto;border-radius:8px"><figcaption>アバターのプルダウンで対象を選び、置き方を確認して調整を始めます。以前の置き方の設定は保持されます。</figcaption></figure>
 <p class="note">補足：URP では、プロジェクトの描画方式に合う環境が必要です。</p>
 </section>
 <section class="chapter" id="ch-03"><h1>始め方</h1>
-<ol><li>Unity のメニューで <code data-ui="Tools/Irotsuya Koubo/Open">Tools/Irotsuya Koubo/Open</code> を押します。ほかの工房が開いているときは、上の切り替えの行の［<span data-ui="色ツヤ工房">色ツヤ工房</span>］からも開けます。</li><li>Hierarchy（シーンの中の物の一覧）から、衣装を含むアバター全体を、［<span data-ui="アバター">アバター</span>］の欄へ入れます。</li><li>［<span data-ui="写真寄り">写真寄り</span>］か［<span data-ui="アニメ寄り">アニメ寄り</span>］を選びます。迷ったら、写真寄りから試せます。</li><li>［<span data-ui="照明の数">照明の数</span>］を選びます。最初は8です。0なら照明を置きません。後からも変えられます。</li><li>［<span data-ui="調整を始める">調整を始める</span>］を押します。編集用の複製ができ、調整の画面に切り替わります。</li></ol>
-<figure><img class=window src="images/01_start_empty.png" alt="開いた直後の開始画面。上の行で工房やモードを切り替えます。" loading="lazy" width="550" height="613"><figcaption>開いた直後の開始画面。上の行で工房やモードを切り替えます。</figcaption></figure>
+<ol><li>Unity のメニューで <code data-ui="Tools/Irotsuya Koubo/Open">Tools/Irotsuya Koubo/Open</code> を押します。ほかの工房が開いているときは、上の切り替えの行の［<span data-ui="色ツヤ工房">色ツヤ工房</span>］からも開けます。</li><li>［<span data-ui="アバター">アバター</span>］のプルダウンから、調整したいアバター全体を選びます。同じ名前があるときは、シーン名と階層で見分けます。選んだだけでは調整は始まりません。</li><li>［<span data-ui="照明の数">照明の数</span>］を選びます。最初は8です。0なら照明を置きません。後からも変えられます。</li><li>［<span data-ui="調整を始める">調整を始める</span>］を押します。編集用の複製ができ、調整の画面に切り替わります。</li></ol>
+<figure style="max-width:550px;margin:24px auto"><img src="images/20261110_avatar_dropdown.png" alt="アバターのプルダウンで対象を選び、置き方を確認して調整を始めます。以前の置き方の設定は保持されます。" loading="lazy" width="963" height="1072" style="display:block;width:100%;height:auto;border-radius:8px"><figcaption>アバターのプルダウンで対象を選び、置き方を確認して調整を始めます。以前の置き方の設定は保持されます。</figcaption></figure>
 <figure><img class=window src="images/03_start_zero.png" alt="照明を置きたくないときは、照明の数を0にします。" loading="lazy" width="550" height="613"><figcaption>照明を置きたくないときは、照明の数を0にします。</figcaption></figure>
-<p>開始画面の「置き方」に、照明とアバターを置く場所が出ます。初めは「別の編集用シーン」で、今までどおり複製を作ります。変えるときは［<span data-ui="設定を変える">設定を変える</span>］か、上の［<span data-ui="設定">設定</span>］を押します（1.3.0 以降）。くわしくは「<a href="#ch-settings">置く場所を選ぶ（設定）</a>」を見ます。</p>
-<figure><img class=window src="images/27_start_placement.png" alt="アバターを選んだ開始画面。照明の数の下に、置き方：別の編集用シーンと、設定を変えるのボタンがあります。" loading="lazy" width="550" height="613"><figcaption>開始画面の置き方。初めは別の編集用シーンです（1.3.0）。</figcaption></figure>
+<p>開始画面の「置き方」に、照明とアバターを置く場所が出ます。未設定のときは「今開いているシーンの複製」で、元のアバターを残して複製を作ります。以前に選んだ設定はそのまま使います。変えるときは［<span data-ui="設定を変える">設定を変える</span>］か、上の［<span data-ui="設定">設定</span>］を押します（1.3.0 以降）。くわしくは「<a href="#ch-settings">置く場所を選ぶ（設定）</a>」を見ます。</p>
+<p>調整中のアバターを正面から見たいときは、［<span data-ui="調整中のアバターにフォーカスする">調整中のアバターにフォーカスする</span>］を押します。［別のアバターを選ぶ］の左にあります。複製や別の編集シーンを使っているときも、現在調整しているアバターの全身を正面から映します。アバター本体や照明、シーン内のカメラは動かしません。調整用シーンが閉じている場合は、先にそのシーンを開いてください。</p>
+<figure style="max-width:550px;margin:24px auto"><img src="images/20261110_avatar_dropdown.png" alt="アバターのプルダウンで対象を選び、置き方を確認して調整を始めます。以前の置き方の設定は保持されます。" loading="lazy" width="963" height="1072" style="display:block;width:100%;height:auto;border-radius:8px"><figcaption>アバターのプルダウンで対象を選び、置き方を確認して調整を始めます。以前の置き方の設定は保持されます。</figcaption></figure>
 <p class="note">初めの設定では、元のアバターは変わりません。編集用の複製を見ながら、少しずつ試してください。</p>
 </section>
 <section class="chapter" id="ch-04"><h1>かんたんで整える</h1>
-<ol><li>上の［<span data-ui="かんたん">かんたん</span>］を押します。</li><li>［<span data-ui="写真寄り">写真寄り</span>］か［<span data-ui="アニメ寄り">アニメ寄り</span>］を試し、近づけたい雰囲気を選びます。雰囲気を変えると、調整値も変わるので、先に選ぶと進めやすくなります。ほかのプリセットも試すときは、「<a href="#ch-presets">プリセットで整える</a>」を見ます。</li><li>次のスライダーを少しずつ動かし、Scene（アバターを見る画面）で確かめます。</li></ol>
+<ol><li>上の［<span data-ui="かんたん">かんたん</span>］を押します。</li><li>雰囲気を変えたいときは、上の［プリセット］から選び、［かんたん］へ戻ります。かんたん画面のアバター直下には「写真より」「アニメ寄り」のボタンは表示されません。</li><li>次のスライダーを少しずつ動かし、Scene（アバターを見る画面）で確かめます。</li></ol>
 <table><thead><tr><th>スライダー</th><th>整えること</th></tr></thead><tbody>
 <tr><td>［<span data-ui="全体の明るさ">全体の明るさ</span>］</td><td>アバター全体を、暗く・明るくします。</td></tr>
 <tr><td>［<span data-ui="全体の色味">全体の色味</span>］</td><td>冷たい色・暖かい色へ寄せます。</td></tr>
 <tr><td>［<span data-ui="全体の陰の濃さ">全体の陰の濃さ</span>］</td><td>陰を、薄く・濃くします。</td></tr>
 <tr><td>［<span data-ui="全体のつや">全体のつや</span>］</td><td>つやを、控えめ・強めにします。</td></tr>
 <tr><td>［<span data-ui="全体の線の太さ">全体の線の太さ</span>］</td><td>線（輪郭線）を、細く・太くします。もともと線のある材質だけが変わります（1.3.0 以降）。</td></tr></tbody></table>
-<figure><img class=window src="images/04_simple.png" alt="かんたんの画面。上から雰囲気、全体、部分の明るさの順です。" loading="lazy" width="550" height="613"><figcaption>かんたんの画面。上から雰囲気、全体、部分の明るさの順です。</figcaption></figure>
-<figure><img class=window src="images/23_simple_outline.png" alt="かんたんの画面。全体のつやの下に、全体の線の太さのスライダーがあります。透明感-効果大を当て、線の太さは-0.30です。" loading="lazy" width="550" height="613"><figcaption>1.3.0 のかんたんの画面。つやの下に、線の太さがあります。</figcaption></figure>
+<figure style="max-width:550px;margin:24px auto"><img src="images/20261110_focus_avatar.png" alt="かんたん画面。正面へ合わせるボタンは「別のアバターを選ぶ」の左にあります。雰囲気の選択は上のプリセットから行います。" loading="lazy" width="963" height="1050" style="display:block;width:100%;height:auto;border-radius:8px"><figcaption>かんたん画面。正面へ合わせるボタンは「別のアバターを選ぶ」の左にあります。雰囲気の選択は上のプリセットから行います。</figcaption></figure>
+<figure style="max-width:550px;margin:24px auto"><img src="images/20261110_focus_avatar.png" alt="かんたん画面。正面へ合わせるボタンは「別のアバターを選ぶ」の左にあります。雰囲気の選択は上のプリセットから行います。" loading="lazy" width="963" height="1050" style="display:block;width:100%;height:auto;border-radius:8px"><figcaption>かんたん画面。正面へ合わせるボタンは「別のアバターを選ぶ」の左にあります。雰囲気の選択は上のプリセットから行います。</figcaption></figure>
 <figure><img class=window src="images/06_adjusted.png" alt="4本を少しずつ動かした例。全体の明るさ-0.18、色味0.06、陰の濃さ-0.15、つや0.18です。" loading="lazy" width="550" height="613"><figcaption>4本を少しずつ動かした例。全体の明るさ-0.18、色味0.06、陰の濃さ-0.15、つや0.18です。</figcaption></figure>
 <div class="compare"><figure><img src="images/05_scene_before.png" alt="調整前。同じ照明・構図で見ています。" loading="lazy" width="559" height="486"><figcaption>調整前。同じ照明・構図で見ています。</figcaption></figure>
 <figure><img src="images/07_scene_after.png" alt="調整後。全体の明るさを少し抑え、暖かい色味にしています。" loading="lazy" width="559" height="486"><figcaption>調整後。全体の明るさを少し抑え、暖かい色味にしています。</figcaption></figure>
@@ -149,7 +150,7 @@ figure{margin:22px 0}figcaption{font-size:14px;color:var(--muted);line-height:1.
 <section class="chapter" id="ch-06"><h1>保存と再開</h1>
 <h2>自動で保存されます</h2><p>スライダーを変えると、自動で保存されます。窓の下が「<span data-ui="✓ 自動で保存しました">✓ 自動で保存しました</span>」になるまで待ってから、窓を閉じます。保存できていないときは、理由を確かめて［<span data-ui="保存を再試行">保存を再試行</span>］を押します。</p>
 <h2>続きから再開する</h2><ol><li>色ツヤ工房を開き直します。前の編集がそのまま出たら、続けて調整できます。</li><li>開始画面が出たときは、「<span data-ui="以前の編集を開く">以前の編集を開く</span>」から、保存した編集を選びます。</li><li>編集用シーンが閉じている案内が出たら、［<span data-ui="編集用シーンを開く">編集用シーンを開く</span>］を押します。</li></ol>
-<figure><img class=window src="images/16_resume_list.png" alt="開始画面の以前の編集を開く。［<span data-ui="保存した編集を選んでください">保存した編集を選んでください</span>］から、アバター名を選んで再開します。" loading="lazy" width="550" height="613"><figcaption>開始画面の以前の編集を開く。［<span data-ui="保存した編集を選んでください">保存した編集を選んでください</span>］から、アバター名を選んで再開します。</figcaption></figure>
+<figure style="max-width:550px;margin:24px auto"><img src="images/20261110_avatar_dropdown.png" alt="開始画面の下にある「以前の編集を開く」から、保存した編集を選んで再開します。" loading="lazy" width="963" height="1072" style="display:block;width:100%;height:auto;border-radius:8px"><figcaption>開始画面の下にある「以前の編集を開く」から、保存した編集を選んで再開します。</figcaption></figure>
 <figure><img class=window src="images/17_resumed.png" alt="窓を閉じて再開した画面。調整した値と8灯の設定を保っています。" loading="lazy" width="550" height="613"><figcaption>窓を閉じて再開した画面。調整した値と8灯の設定を保っています。</figcaption></figure>
 <h2>今の雰囲気を残す</h2><ol><li>［<span data-ui="くわしく">くわしく</span>］に切り替え、［<span data-ui="今の見た目を雰囲気として保存">今の見た目を雰囲気として保存</span>］を開きます。</li><li>［<span data-ui="保存する名前">保存する名前</span>］を入れ、［<span data-ui="別名で保存">別名で保存</span>］を押します。</li><li>後で使うときは、上の［<span data-ui="雰囲気">雰囲気</span>］の欄から選んで［<span data-ui="適用">適用</span>］を押します。見つからないときは［<span data-ui="一覧を更新">一覧を更新</span>］を押します。上の［<span data-ui="プリセット">プリセット</span>］の一覧からも選べます。</li></ol>
 <figure><img class=window src="images/14_preset_save.png" alt="今の見た目を雰囲気として保存する画面。分かる名前を付けて残します。" loading="lazy" width="550" height="613"><figcaption>今の見た目を雰囲気として保存する画面。分かる名前を付けて残します。</figcaption></figure>
